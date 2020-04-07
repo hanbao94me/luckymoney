@@ -1,4 +1,20 @@
+#spring:
+#  profiles:
+#    active:
+#    - dev
+
+limit:
+  minMoney: 10
+  maxMoney: 100
+  description: 最少${limit.minMoney},最多${limit.maxMoney}；
+
 spring:
-  profiles:
-    active:
-    - dev
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: JDBC:mysql://192.168.21.43:3307/luckymoney
+    username: root
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

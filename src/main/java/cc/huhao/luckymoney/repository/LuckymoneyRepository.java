@@ -1,4 +1,4 @@
-package cc.huhao.luckymoney.dao;
+package cc.huhao.luckymoney.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

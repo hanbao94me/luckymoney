@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,6 +15,7 @@ import cc.huhao.luckymoney.repository.LuckymoneyRepository;
 import cc.huhao.luckymoney.model.Luckymoney;
 
 @RestController
+@RequestMapping("/luckymoney")
 public class LuckymoneyController {
     @Autowired
     private LimitConfig limitConfig;
@@ -24,14 +26,7 @@ public class LuckymoneyController {
     public String SayHello() {
         return limitConfig.getDescription();
     }
-
-    @GetMapping("/")
-    public List<Luckymoney> List() {
-        List<Luckymoney> list = luckymoneyRepository.findAll();
-        return list;
-    }
-
-    @PostMapping("/")
+    @PostMapping("")
     public Luckymoney Create(@RequestParam("producer") String producer, @RequestParam("consumer") String consumer,
             @RequestParam("money") BigDecimal money) {
         Luckymoney luckymoney = new Luckymoney();
@@ -40,4 +35,11 @@ public class LuckymoneyController {
         luckymoney.setProducer(producer);
         return luckymoneyRepository.save(luckymoney);
     }
+    @GetMapping("")
+    public List<Luckymoney> List() {
+        List<Luckymoney> list = luckymoneyRepository.findAll();
+        return list;
+    }
+
+    
 }

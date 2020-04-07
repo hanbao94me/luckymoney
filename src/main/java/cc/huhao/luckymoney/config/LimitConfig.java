@@ -13,24 +13,18 @@ public class LimitConfig {
     private String maxMoney;
 
     /**
-     * @param minMoney the minMoney to set
-     */
-    public void setMinMoney(BigDecimal minMoney) {
-        this.minMoney = minMoney;
-    }
-
-    /**
-     * @return the minMoney
-     */
-    public BigDecimal getMinMoney() {
-        return minMoney;
-    }
-
-    /**
      * @param maxMoney the maxMoney to set
      */
     public void setMaxMoney(String maxMoney) {
         this.maxMoney = maxMoney;
+    }
+
+    public BigDecimal getMinMoney() {
+        return minMoney;
+    }
+
+    public void setMinMoney(BigDecimal minMoney) {
+        this.minMoney = minMoney;
     }
 
     /**
